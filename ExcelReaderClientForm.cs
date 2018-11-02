@@ -112,22 +112,30 @@ namespace ClaimRemedi.ExcelReader.Client
             r.FirstLineIsHeader = this.checkBox1.Checked;
 
             // read file
-            DataSet data = r.ReadAllData();
-
-            label1.Text = "Data read from file, populating list view...";
-            label1.Refresh();
-
-            // set data to list view
-            // NOTE: assume first sheet for now...
-            SetDataToListView(r);
-
-            if (data != null && data.Tables.Count > 0)
+            try
             {
-                label1.Text = "Data loaded successfully. Total Rows: " + data.Tables[0].Rows.Count;
+                DataSet data = r.ReadAllData();
+
+                label1.Text = "Data read from file, populating list view...";
+                label1.Refresh();
+
+                // set data to list view
+                // NOTE: assume first sheet for now...
+                SetDataToListView(r);
+
+                if (data != null && data.Tables.Count > 0)
+                {
+                    label1.Text = $"Data loaded successfully. Total Rows: {data.Tables[0].Rows.Count}";
+                }
+                else
+                {
+                    label1.Text = "Data was unable to be loaded.";
+                }
             }
-            else
+            catch(Exception e)
             {
                 label1.Text = "Data was unable to be loaded.";
+                MessageBox.Show(e.Message);
             }
             label1.Refresh();
         }

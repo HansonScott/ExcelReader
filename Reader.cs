@@ -190,9 +190,9 @@ namespace ClaimRemedi.ExcelReader
             {
                 oConn.Open();
             }
-            catch //(Exception e)
+            catch (Exception e)
             {
-                return null;
+                throw(e);
             }
             // NOTE: THEORY: the workbook names (sheet names) are the tables we select from
             // so getSchema reads the workbook names as the table names.
