@@ -1,43 +1,3 @@
-/*
------------------------------------------------------------------------------
-Copyright (c) 2003 ClaimRemedi, Inc. All Rights Reserved.
-
-PROPRIETARY NOTICE: This software has been provided pursuant to a
-License Agreement that contains restrictions on its use. This software
-contains valuable trade secrets and proprietary information of
-ClaimRemedi, Inc and is protected by Federal copyright law.  It may not
-be copied or distributed in any form or medium, disclosed to third parties,
-or used in any manner that is not provided for in said License Agreement,
-except with the prior written authorization of ClaimRemedi, Inc.
-
------------------------------------------------------------------------------
-$Log$
-Revision 53  2012/02/23 14:16:22  shanson
-  Added comment keyword
-
-$Log: /Code/ClaimRemedi.ExcelReader.Client/ExcelReaderClientForm.cs $
- 
- 1     3/22/11 6:20p Nmayer
- VS 2010 Initial Checkin
- 
- 2     12/01/10 11:53a Shanson
- Added infrastructure for password protected file (doesn't work though)
- Changed results listView to DataGrid to simplify and expand
- functionality.
- Added handling for bad data files.
- 
- 1     10/04/10 11:06a Shanson
- Initial check in from transfer from VS40
- 
- 4     8/31/10 10:18a Shanson
- Added check box functionality of reloading the file on change.
- 
- 3     8/31/10 10:05a Shanson
- Added check box for header row option, moved main method into form.cs
-
------------------------------------------------------------------------------
-*/
-
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using ClaimRemedi.ExcelReader;
 
 namespace ClaimRemedi.ExcelReader.Client
 {
