@@ -204,7 +204,7 @@ namespace ClaimRemedi.ExcelReader
             // loop through all rows and build a new DataTable for each, adding it to our DataSet
             for (int i = 0; i < Workbooks.Rows.Count; i++)
             {
-                DataRow WorkbookRow = Workbooks.Rows[0];
+                DataRow WorkbookRow = Workbooks.Rows[i];
                 String WorkbookName = WorkbookRow[2].ToString(); // 2 = TableName (after ID, I assume)
 
                 // setup output dataTable
@@ -230,10 +230,11 @@ namespace ClaimRemedi.ExcelReader
                 }
 
                 // Set dataTable back to dataSet
-                while (results.Tables.Contains(result.TableName))
-                {
-                    result.TableName = result.TableName + "+";
-                }
+                //while (results.Tables.Contains(result.TableName))
+                //{
+                //    result.TableName = result.TableName + "+";
+                //}
+
                 results.Tables.Add(result);
             } // end for loop - tables
 

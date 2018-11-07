@@ -92,6 +92,9 @@ namespace ClaimRemedi.ExcelReader.Client
                 {
                     label1.Text = "Data was unable to be loaded.";
                 }
+
+                lblMetaData.Text = GetMetaDataFromDataSet(data);
+
             }
             catch(Exception e)
             {
@@ -100,6 +103,12 @@ namespace ClaimRemedi.ExcelReader.Client
             }
             label1.Refresh();
         }
+
+        private string GetMetaDataFromDataSet(DataSet data)
+        {
+            return $"table count: {data.Tables.Count}";
+        }
+
         private void SetDataToListView(Reader r)
         {
             if (r == null || r.Data == null) { return; }

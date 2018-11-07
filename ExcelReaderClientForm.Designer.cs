@@ -37,6 +37,7 @@ namespace ClaimRemedi.ExcelReader.Client
             this.lbl_path = new System.Windows.Forms.Label();
             this.btn_Run = new System.Windows.Forms.Button();
             this.gv_results = new System.Windows.Forms.DataGridView();
+            this.lblMetaData = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gv_results)).BeginInit();
             this.SuspendLayout();
             // 
@@ -130,18 +131,28 @@ namespace ClaimRemedi.ExcelReader.Client
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gv_results.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gv_results.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gv_results.Location = new System.Drawing.Point(12, 67);
+            this.gv_results.Location = new System.Drawing.Point(12, 148);
             this.gv_results.Name = "gv_results";
             this.gv_results.RowHeadersVisible = false;
             this.gv_results.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gv_results.Size = new System.Drawing.Size(707, 423);
+            this.gv_results.Size = new System.Drawing.Size(707, 342);
             this.gv_results.TabIndex = 9;
+            // 
+            // lblMetaData
+            // 
+            this.lblMetaData.AutoSize = true;
+            this.lblMetaData.Location = new System.Drawing.Point(12, 70);
+            this.lblMetaData.Name = "lblMetaData";
+            this.lblMetaData.Size = new System.Drawing.Size(76, 13);
+            this.lblMetaData.TabIndex = 10;
+            this.lblMetaData.Text = "file metadata...";
             // 
             // ExcelReaderClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(731, 502);
+            this.Controls.Add(this.lblMetaData);
             this.Controls.Add(this.gv_results);
             this.Controls.Add(this.btn_Run);
             this.Controls.Add(this.lbl_path);
@@ -171,6 +182,7 @@ namespace ClaimRemedi.ExcelReader.Client
         private System.Windows.Forms.Label lbl_path;
         private System.Windows.Forms.Button btn_Run;
         private System.Windows.Forms.DataGridView gv_results;
+        private System.Windows.Forms.Label lblMetaData;
     }
 }
 
